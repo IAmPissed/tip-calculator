@@ -7,7 +7,8 @@ const totoalBillAmountAfterTipPerPerson = document.querySelector('[data-bill-aft
 const calculatorResetButton = document.querySelector('[data-reset-calculator]') as HTMLButtonElement
 
 type TipCalculator = {
-    [billTotalAmountBeforeTip : string]: null | number,
+    [key: string]: null|number,
+    billTotalAmountBeforeTip: null | number,
     numberOfPeople: null | number,
     tip: null | number,
     customTip: null | number,
@@ -57,7 +58,7 @@ tipPercentageButtons.forEach((button) => {
 })
 
 billInput.addEventListener('input', (e: Event) => {
-    if (!isValidBillAmount(billInput.value)) return 
+    if (!isValidBillAmount(billInput.value)) return
     setBillTotalAmountBeforeTip(billInput.value)
     calculateTipAmountPerPerson()
     calculateEachPersonBill()
