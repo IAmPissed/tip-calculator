@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<script defer src="calculator.js"></script>
+		<title>Frontend Mentor | Tip calculator app</title>
+	</head>
+	<body>
+		<h1 class="title">spli<br />tter</h1>
+		<div class="card card--main">
+			<div class="card__calculator">
+				<form class="card__form">
+					<div class="card__input-group">
+						<label for="bill" class="card__label">Bill</label>
+						<input
+							type="text"
+							id="bill"
+							class="card__input card__input--bill"
+							data-bill-amount
+							autocomplete="off"
+							spellcheck="off"
+						/>
+					</div>
+					<div class="card__input-group">
+						<label class="card__label">Select Tip %</label>
+						<div class="card__button-grid">
+							<button
+								type="button"
+								class="card__button card__button--percentage"
+								data-tip-percentage
+							>
+								5%
+							</button>
+							<button
+								type="button"
+								class="card__button card__button--percentage"
+								data-tip-percentage
+							>
+								10%
+							</button>
+							<button
+								type="button"
+								class="card__button card__button--percentage"
+								data-tip-percentage
+							>
+								15%
+							</button>
+							<button
+								type="button"
+								class="card__button card__button--percentage"
+								data-tip-percentage
+							>
+								20%
+							</button>
+							<button
+								type="button"
+								class="card__button card__button--percentage"
+								data-tip-percentage
+							>
+								25%
+							</button>
+							<input
+								type="text"
+								placeholder="Custom"
+								autocomplete="off"
+								spellcheck="off"
+								class="card__button card__button--custom"
+								data-custom-tip-percentage
+							/>
+						</div>
+					</div>
+					<div class="card__input-group">
+						<label for="numberOfPeople" class="card__label"
+							>Number of People</label
+						>
+						<input
+							id="numberOfPeople"
+							type="text"
+							autocomplete="off"
+							spellcheck="off"
+							class="card__input card__input--number"
+							data-number-of-people
+						/>
+					</div>
+				</form>
+			</div>
+			<div class="card card--inner">
+				<div class="card__row">
+					<p class="card__text">
+						Tip Amount<br />
+						<small>/ person</small>
+					</p>
+					<p class="card__text card__text--amount">
+						$<span data-tip-amount-per-person></span>
+					</p>
+				</div>
+				<div class="card__row">
+					<p class="card__text">
+						Total<br />
+						<small>/ person</small>
+					</p>
+					<p class="card__text card__text--amount">
+						$<span data-bill-after-tip-per-person></span>
+					</p>
+				</div>
+				<button class="card__button card__button--reset" data-reset-calculator>
+					reset
+				</button>
+			</div>
+		</div>
+	</body>
+</html>

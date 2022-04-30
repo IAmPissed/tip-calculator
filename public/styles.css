@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --light-cyan: hsl(172, 67%, 75%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark--grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --form-inputs-font-size: 24px;
+}
+
+body {
+    font-family: 'Space Mono', sans-serif;
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+}
+
+.title {
+    text-transform: uppercase;
+    color: var(--very-dark-cyan);
+    padding: .5em 0;
+    letter-spacing: .2em;
+}
+.card--main {
+    --padding: 1em;
+    --radius: 1rem;
+    width: 100%;
+    background-color: white;
+    flex: 1;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    padding: calc(var(--padding) * 2.5);
+}
+.card__input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em 0;
+}
+.card__label {
+    margin-bottom: .5em;
+    color: var(--dark--grayish-cyan);
+}
+.card__input {
+    font-family: inherit;
+    font-size: 24px;
+    padding: 5px .5em 10px  1.25em;
+    border: 0;
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: calc(var(--radius) / 3);
+    color: var(--very-dark-cyan);
+    text-align: right;
+}
+.card__input:focus {
+    outline-color: var(--strong-cyan);
+}
+.card__input--bill {
+    background-image: url('/images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: calc(var(--padding) / 2) ;
+    background-size: 10px;
+}
+.card__button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+.card__button {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.2em;
+    background: var(--very-dark-cyan);
+    color: var(--very-light-grayish-cyan);
+    border: 0;
+    padding: calc(var(--padding) / 2);
+    border-radius: calc(var(--radius) / 3);
+    cursor: pointer;
+}
+.card__button:not(.card__button--custom):hover {
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+}
+.card__button--custom {
+    background: var(--very-light-grayish-cyan);
+    color: var(--dark--grayish-cyan);
+    text-transform: capitalize;
+    text-align: center;
+}
+.card__input--number {
+    background-image: url('/images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: calc(var(--padding) / 2) ;
+    background-size: 12px;
+}
+.card--inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--padding) * 2) calc(var(--padding) * 1.75);
+    background-color: var(--very-dark-cyan);
+    color: var(--very-light-grayish-cyan);
+    border-radius: var(--radius);
+    margin-top: 2em;
+}
+.card__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 1.5em 0;
+}
+.card__text small {
+    color: var(--light-grayish-cyan);
+}
+.card__text--amount {
+    font-size: 2em;
+    color: var(--strong-cyan);
+}
+.card__button--reset {
+    width: 100%;
+    font-family: inherit;
+    background-color: var(--strong-cyan);
+    text-transform: uppercase;
+    color: var(--very-dark-cyan);
+}
+.card__button--reset:hover {
+    background-color: var(--light-cyan);
+}
+
+/* Dynamic Classes */
+.card__button--percentage.selected {
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+}
+.card__button--custom.selected {
+    outline-color: var(--strong-cyan);
+    text-align: right;
+}
+.card__button--custom.selected:focus::placeholder {
+    color: transparent;
+}
+
+@media (min-width: 724px) {
+    .card--main {
+        width: min(80%, 60rem);
+        flex: 0;
+        margin: 2em;
+        border-radius: var(--radius);
+        padding: calc(var(--padding) * 1.5);
+    }
+}
+@media (min-width: 880px) {
+    body {
+        padding-bottom: 1em;
+    }
+    .card--main {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .card__calculator {
+        flex: 1;
+        margin-right: 2em;
+    }
+    .card__input-group:last-of-type {
+        margin-bottom: 0;
+    }
+    .card__button-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card--inner {
+        margin-top: 0;
+        width: 40%;
+        justify-content: space-between;
+    }
+    .card__row:last-of-type {
+        margin-bottom: auto;
+    }
+    .card__text {
+        margin-right: .25em;
+    } 
+}
