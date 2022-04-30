@@ -67,7 +67,7 @@ body {
     outline-color: var(--strong-cyan);
 }
 .card__input--bill {
-    background-image: url('/images/icon-dollar.svg');
+    background-image: url('images/icon-dollar.svg');
     background-repeat: no-repeat;
     background-position: calc(var(--padding) / 2) ;
     background-size: 10px;
@@ -99,7 +99,7 @@ body {
     text-align: center;
 }
 .card__input--number {
-    background-image: url('/images/icon-person.svg');
+    background-image: url('images/icon-person.svg');
     background-repeat: no-repeat;
     background-position: calc(var(--padding) / 2) ;
     background-size: 12px;
